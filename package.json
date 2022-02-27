@@ -1,0 +1,82 @@
+{
+    "name": "@donmahallem/rollup-plugin-shebang",
+    "version": "0.0.0",
+    "description": "Rollup plugin inserting shebang in bundle entries",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts",
+    "private": false,
+    "keywords": [
+        "rollup",
+        "plugin",
+        "rollup-plugin",
+        "shebang"
+    ],
+    "scripts": {
+        "build": "npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc --project ./tsconfig.dist-esm.json",
+        "build:cjs": "tsc --project ./tsconfig.dist-cjs.json",
+        "build:readme": "npx @appnest/readme generate --input ./package_readme_blueprint.md --config readme_config.json",
+        "test": "mocha --config ./.mocharc.yml",
+        "test:coverage": "nyc --nycrc-path ./.nycrc.json npm run test",
+        "lint": "eslint -c ./.eslintrc.cjs --ext .ts ./src",
+        "postlint": "prettier --config ./.prettierrc src/**/*.ts --check",
+        "lint:fix": "eslint -c ./.eslintrc.cjs --ext .ts ./src --fix",
+        "postlint:fix": "prettier --config ./.prettierrc src/**/*.ts --write",
+        "docs": "typedoc --options ./typedoc.json",
+        "prepublishOnly": "npm run test && npm run docs && npm run build",
+        "version": "npm run build:readme",
+        "clean": "rimraf ./dist ./.nyc_output ./coverage ./docs"
+    },
+    "files": [
+        "dist/*",
+        "src/*"
+    ],
+    "homepage": "https://github.com/donmahallem/rollup-plugin-shebang/",
+    "author": {
+        "name": "donmahallem",
+        "email": "donmahallem@users.noreply.github.com",
+        "url": "https://github.com/donmahallem"
+    },
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/donmahallem/rollup-plugin-shebang/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/donmahallem/rollup-plugin-shebang.git"
+    },
+    "engines": {
+        "node": ">=14"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+        "@appnest/readme": "1.2.7",
+        "@donmahallem/eslint-config": "1.0.15",
+        "@semantic-release/changelog": "6.0.1",
+        "@semantic-release/git": "10.0.1",
+        "@types/chai": "4.3.0",
+        "@types/mocha": "9.1.0",
+        "@types/node": "17.0.8",
+        "chai": "4.3.6",
+        "colors": "1.4.0",
+        "eslint": "8.9.0",
+        "mocha": "9.2.1",
+        "nyc": "15.1.0",
+        "prettier": "2.5.1",
+        "rollup": "2.68.0",
+        "semantic-release": "19.0.2",
+        "ts-node": "10.5.0",
+        "tslib": "2.3.1",
+        "typedoc": "0.22.12",
+        "typescript": "4.5.5"
+    },
+    "peerDependencies": {
+        "rollup": "^2.39.0"
+    },
+    "dependencies": {
+        "magic-string": "~0.25.7"
+    }
+}
