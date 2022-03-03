@@ -77,6 +77,6 @@
         "rollup": "^2.39.0"
     },
     "dependencies": {
-        "magic-string": "~0.25.8"
+        "magic-string": "~0.26.1"
     }
 }
