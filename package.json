@@ -1,6 +1,6 @@
 {
     "name": "@donmahallem/rollup-plugin-shebang",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "Rollup plugin inserting shebang in bundle entries",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
