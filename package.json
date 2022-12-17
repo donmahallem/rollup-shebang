@@ -66,7 +66,7 @@
         "mocha": "10.2.0",
         "nyc": "15.1.0",
         "prettier": "2.8.1",
-        "rollup": "3.7.4",
+        "rollup": "3.7.5",
         "semantic-release": "19.0.5",
         "ts-node": "10.9.1",
         "tslib": "2.4.1",
