@@ -1,9 +1,8 @@
 {
     "baseBranches": [
-        "main"
+        "master"
     ],
     "extends": [
-        "@donmahallem"
-    ],
-    "packageRules": []
+        "github>donmahallem/renovate-config"
+    ]
 }
